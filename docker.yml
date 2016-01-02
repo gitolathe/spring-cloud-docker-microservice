@@ -1,0 +1,5 @@
+web:
+  image: spring-cloud-web-sample
+  ports:
+    - "9000:8080"
+    
