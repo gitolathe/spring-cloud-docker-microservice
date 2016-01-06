@@ -44,9 +44,17 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>${docker-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>                
                 <configuration>
                     <imageName>spring-cloud-gw-sample</imageName>
-                    <dockerDirectory>docker</dockerDirectory>
+                    <dockerDirectory>${project.basedir}/docker</dockerDirectory>
                     <resources>
                         <resource>
                             <directory>${project.build.directory}</directory>
